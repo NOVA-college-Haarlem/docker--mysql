@@ -1,20 +1,10 @@
 version: '3.8'
 services:
-  web:
-    image: php:8.0-apache
-    volumes:
-      - ./site:/var/www/html
-    ports:
-      - "80:80"
-    depends_on:
-      - mariadb
+  
   mariadb:
     image: mariadb:10.4
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: database
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
       MYSQL_ROOT_HOST: '%'
     ports:
       - "3306:3306"
